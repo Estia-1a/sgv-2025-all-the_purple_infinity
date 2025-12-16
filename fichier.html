@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAJ' ESTIA - Covoiturage</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div class="browser-mockup">
+        <div class="browser-header">
+            <div class="controls">
+                <div class="circle red"></div>
+                <div class="circle yellow"></div>
+                <div class="circle green"></div>
+            </div>
+            <div class="address-bar">
+                <i class="fas fa-lock"></i> https://
+            </div>
+            <i class="fas fa-search search-icon-header"></i>
+        </div>
+
+        <div class="content">
+            <div id="connexion" class="page active">
+                <div class="logo-placeholder"></div>
+                <h1 class="site-title">TRAJ' ESTIA</h1>
+                
+                <div class="form-container">
+                    <h2 class="section-title">Connexion</h2>
+                    <form>
+                        <label for="identifiant-connexion">Identifiant:</label>
+                        <input type="text" id="identifiant-connexion">
+
+                        <label for="mot-de-passe-connexion">Mot de Passe:</label>
+                        <input type="password" id="mot-de-passe-connexion">
+
+                        <button type="button" class="btn primary" onclick="showPage('recherche')">Suivant</button>
+                    </form>
+                    <p class="signup-link">
+                        Pas encore de compte? <a href="#" onclick="showPage('inscription')">Cliquez ici!</a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="inscription" class="page">
+                <h2 class="section-title">Inscription</h2>
+                <div class="form-container">
+                    <form>
+                        <label for="identifiant-inscription">Identifiant:</label>
+                        <input type="text" id="identifiant-inscription">
+
+                        <label for="mot-de-passe-inscription">Mot de Passe:</label>
+                        <input type="password" id="mot-de-passe-inscription">
+
+                        <label for="conf-mot-de-passe">Confirmation Mot de Passe:</label>
+                        <input type="password" id="conf-mot-de-passe">
+
+                        <label for="jour-naissance">Jour de naissance: 
+                            <span class="date-input-wrapper">
+                                <input type="text" id="jour-naissance" placeholder="//">
+                                <i class="far fa-calendar-alt calendar-icon"></i>
+                            </span>
+                        </label>
+                        
+
+                        <button type="button" class="btn primary" onclick="showPage('recherche')">Suivant</button>
+                    </form>
+                    <button type="button" class="btn secondary" onclick="showPage('connexion')">Retour</button>
+                </div>
+            </div>
+
+            <div id="recherche" class="page">
+                <h1 class="site-title-small">TRAJ' ESTIA</h1>
+                <h2 class="section-title">Trouve ton trajet!</h2>
+                
+                <div class="search-form-container">
+                    <form>
+                        <label for="depart">D'où pars-tu pour aller à l'ESTIA?</label>
+                        <input type="text" id="depart">
+
+                        <label for="jour-trajet">Quel jour? 
+                             <span class="date-input-wrapper">
+                                <input type="text" id="jour-trajet" placeholder="//">
+                                <i class="far fa-calendar-alt calendar-icon"></i>
+                            </span>
+                        </label>
+                        
+                        <label for="heure-trajet">A quelle heure?</label>
+                        <input type="time" id="heure-trajet">
+
+                        <button type="button" class="btn primary" onclick="showPage('resultats')">Voir les trajets disponibles!</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="resultats" class="page">
+                <h2 class="page-header">Trajet Uhabia -> ESTIA</h2>
+                
+                <div class="results-list">
+                    <div class="trajet-card">
+                        <div class="trajet-info">
+                            <p>Proposé par **Jules**, Véhicule: Peugeot 107, 3 places dispo!</p>
+                        </div>
+                        <div class="trajet-action">
+                            <span class="price">2€</span>
+                            <button type="button" class="btn primary" onclick="showPage('paiement')">Sélectionner ce trajet!</button>
+                        </div>
+                    </div>
+                    
+                    <div class="trajet-card">
+                        <div class="trajet-info">
+                            <p>Proposé par **Fabio**, Véhicule: Nissan Juke, 4 places dispo!</p>
+                        </div>
+                        <div class="trajet-action">
+                            <span class="price">2€</span>
+                            <button type="button" class="btn primary" onclick="showPage('paiement')">Sélectionner ce trajet!</button>
+                        </div>
+                    </div>
+
+                    <div class="trajet-card">
+                        <div class="trajet-info">
+                            <p>Proposé par **Paul**, Véhicule: Peugeot 207, 4 places dispo!</p>
+                        </div>
+                        <div class="trajet-action">
+                            <span class="price">2€</span>
+                            <button type="button" class="btn primary" onclick="showPage('paiement')">Sélectionner ce trajet!</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="btn link back-btn" onclick="showPage('recherche')">< Retour</button>
+            </div>
+
+            <div id="paiement" class="page">
+                <h2 class="section-title">Paiement</h2>
+                <h3 class="trajet-details">Trajet Uhabia -> ESTIA</h3>
+                <div class="form-container">
+                    <form>
+                        <label for="numero-carte">Numéro de carte:</label>
+                        <input type="text" id="numero-carte">
+
+                        <div class="payment-details">
+                            <label for="date-expiration">Date d'expiration: 
+                                <span class="date-input-wrapper small">
+                                    <input type="text" id="date-expiration" placeholder="//">
+                                    <i class="far fa-calendar-alt calendar-icon"></i>
+                                </span>
+                            </label>
+
+                            <label for="cvv">CVV:</label>
+                            <input type="text" id="cvv" class="cvv-input">
+                        </div>
+                        
+
+                        <button type="button" class="btn primary pay-btn" onclick="showPage('confirmation')">Payer</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div id="confirmation" class="page">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3 class="confirmation-message">Votre paiement a bien été effectué!</h3>
+                <h3 class="confirmation-message">Votre trajet est réservé!</h3>
+                <h3 class="status-message">En Route!</h3>
+                
+                <div class="download-section">
+                    <i class="fas fa-arrow-down download-icon"></i>
+                    <span class="download-text">Télécharge ton billet!</span>
+                    <i class="fas fa-arrow-down download-icon"></i>
+                </div>
+                
+                <i class="fas fa-car car-icon"></i>
+
+                <button type="button" class="btn primary large-btn" onclick="showPage('recherche')">Réserver un nouveau trajet</button>
+            </div>
+
+        </div>
+    </div>
+    
+    <script>
+        function showPage(id) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(id).classList.add('active');
+        }
+        
+        // Initialiser la page d'accueil (connexion)
+        document.addEventListener('DOMContentLoaded', () => {
+             showPage('connexion');
+        });
+    </script>
+</body>
+</html>
