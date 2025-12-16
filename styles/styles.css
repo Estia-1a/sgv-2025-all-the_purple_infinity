@@ -10,7 +10,7 @@ body {
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alignement en haut */
+    align-items: flex-start; /* Alignement en haut pour le desktop */
     min-height: 100vh;
 }
 
@@ -23,7 +23,7 @@ body {
     box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75); /* Ombre pour effet 'levé' */
 }
 
-/* En-tête du Navigateur */
+/* En-tête du Navigateur (Barre d'adresse) */
 .browser-header {
     display: flex;
     align-items: center;
@@ -73,16 +73,17 @@ body {
 }
 
 .page {
-    display: none;
+    display: none; /* Cache toutes les pages par défaut */
     text-align: center;
 }
 
 .page.active {
-    display: block;
+    display: block; /* Affiche uniquement la page active */
 }
 
 /* --- Éléments de la Maquette --- */
 
+/* Logo (cadre simple) */
 .logo-placeholder {
     width: 50px;
     height: 50px;
@@ -93,10 +94,11 @@ body {
     left: 40px;
 }
 
+/* Titres */
 .site-title {
     font-size: 2em;
     margin-bottom: 40px;
-    margin-top: 10px; /* Espace après le logo fictif */
+    margin-top: 10px; 
     text-align: center;
 }
 
@@ -159,19 +161,27 @@ form input[type="time"],
     font-size: 1em;
     display: inline-block;
     background-color: white;
+    text-align: center;
 }
 
+/* Bouton principal (Suivant, Sélectionner, Payer) */
 .btn.primary {
     background-color: #ccc;
     border-width: 3px;
     box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+    width: 100%; /* S'étend sur la largeur du formulaire */
+    box-sizing: border-box;
 }
 
+/* Bouton secondaire (Retour) */
 .btn.secondary {
     background-color: #fff;
     margin-top: 15px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* Bouton lien (Retour <) */
 .btn.link {
     border: none;
     background: none;
@@ -193,7 +203,7 @@ form input[type="time"],
 }
 
 .signup-link a {
-    color: blue;
+    color: blue; /* Seule exception de couleur pour un lien cliquable */
     text-decoration: underline;
     cursor: pointer;
 }
@@ -204,7 +214,7 @@ form input[type="time"],
 }
 
 
-/* Champs Date */
+/* Champs Date avec icône */
 .date-input-wrapper {
     display: flex;
     align-items: center;
@@ -214,18 +224,19 @@ form input[type="time"],
 }
 
 .date-input-wrapper input {
-    width: 150px;
+    width: 150px; /* Largeur spécifique pour les champs date/mois/année */
     display: inline-block;
 }
 
 .date-input-wrapper.small input {
-    width: 70px; /* Plus petit pour le paiement */
+    width: 70px; /* Plus petit pour le champ d'expiration (paiement) */
 }
 
 .calendar-icon {
     font-size: 1.2em;
     position: absolute;
     right: 5px;
+    pointer-events: none; /* Empêche l'icône de bloquer le clic sur le champ */
 }
 
 /* --- PAGE RÉSULTATS --- */
@@ -263,6 +274,13 @@ form input[type="time"],
     font-weight: bold;
     border: 2px solid black;
     padding: 5px 10px;
+    white-space: nowrap; /* Empêche le prix de s'enrouler */
+}
+
+.trajet-action .btn.primary {
+    width: auto;
+    margin-top: 0;
+    padding: 8px 15px;
 }
 
 /* --- PAGE PAIEMENT --- */
@@ -284,7 +302,7 @@ form input[type="time"],
 }
 
 .cvv-input {
-    width: 100px !important;
+    width: 100px !important; /* Force la petite largeur */
 }
 
 .pay-btn {
@@ -297,7 +315,7 @@ form input[type="time"],
 /* --- PAGE CONFIRMATION --- */
 .success-icon {
     font-size: 4em;
-    color: #27c93f;
+    color: #27c93f; /* Utilise une couleur pour simuler la coche de validation */
     margin-bottom: 20px;
 }
 
