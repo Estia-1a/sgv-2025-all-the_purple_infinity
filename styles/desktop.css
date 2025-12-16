@@ -1,0 +1,342 @@
+/* Import de la police pour un rendu style "wireframe" */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+/* --- Styles Généraux --- */
+
+body {
+    font-family: 'Roboto Mono', monospace; /* Police d'écriture pour l'aspect maquette */
+    background-color: #f0f0f0; /* Fond légèrement gris */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alignement en haut */
+    min-height: 100vh;
+}
+
+/* Conteneur de la Maquette du Navigateur */
+.browser-mockup {
+    width: 900px; /* Largeur sur ordinateur (simulée) */
+    max-width: 100%;
+    background-color: white;
+    border: 3px solid black;
+    box-shadow: 10px 10px 0px 0px rgba(0,0,0,0.75); /* Ombre pour effet 'levé' */
+}
+
+/* En-tête du Navigateur */
+.browser-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 3px solid black;
+    background-color: #eee;
+}
+
+.controls {
+    display: flex;
+    gap: 5px;
+}
+
+.circle {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+.red { background-color: #ff5f56; }
+.yellow { background-color: #ffbd2e; }
+.green { background-color: #27c93f; }
+
+.address-bar {
+    flex-grow: 1;
+    margin: 0 20px;
+    padding: 5px 10px;
+    border: 2px solid black;
+    background-color: white;
+    text-align: left;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.search-icon-header {
+    font-size: 1.2em;
+}
+
+/* Contenu des Pages */
+.content {
+    padding: 40px;
+    min-height: 600px; /* Hauteur minimale pour l'aspect visuel */
+    position: relative;
+}
+
+.page {
+    display: none;
+    text-align: center;
+}
+
+.page.active {
+    display: block;
+}
+
+/* --- Éléments de la Maquette --- */
+
+.logo-placeholder {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    background-color: #ccc;
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+
+.site-title {
+    font-size: 2em;
+    margin-bottom: 40px;
+    margin-top: 10px; /* Espace après le logo fictif */
+    text-align: center;
+}
+
+.site-title-small {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.section-title {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid black;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.page-header {
+    text-align: left;
+    font-size: 1.2em;
+    border-bottom: 2px solid black;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Formulaires */
+.form-container, .search-form-container {
+    width: 450px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1em;
+}
+
+form input[type="text"], 
+form input[type="password"], 
+form input[type="time"],
+.date-input-wrapper input {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 2px solid black;
+    box-sizing: border-box;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+}
+
+/* Boutons */
+.btn {
+    padding: 10px 20px;
+    border: 2px solid black;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 25px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1em;
+    display: inline-block;
+    background-color: white;
+}
+
+.btn.primary {
+    background-color: #ccc;
+    border-width: 3px;
+    box-shadow: 2px 2px 0px 0px rgba(0,0,0,0.75);
+}
+
+.btn.secondary {
+    background-color: #fff;
+    margin-top: 15px;
+}
+
+.btn.link {
+    border: none;
+    background: none;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+    margin-top: 20px;
+    display: block;
+}
+
+.btn.large-btn {
+    padding: 15px 30px;
+    font-size: 1.1em;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.signup-link a {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.back-btn {
+    text-align: left;
+    margin-left: 0;
+}
+
+
+/* Champs Date */
+.date-input-wrapper {
+    display: flex;
+    align-items: center;
+    width: auto;
+    gap: 5px;
+    position: relative;
+}
+
+.date-input-wrapper input {
+    width: 150px;
+    display: inline-block;
+}
+
+.date-input-wrapper.small input {
+    width: 70px; /* Plus petit pour le paiement */
+}
+
+.calendar-icon {
+    font-size: 1.2em;
+    position: absolute;
+    right: 5px;
+}
+
+/* --- PAGE RÉSULTATS --- */
+.results-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.trajet-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid black;
+    padding: 10px 15px;
+    text-align: left;
+}
+
+.trajet-info {
+    flex-grow: 1;
+}
+
+.trajet-info p {
+    margin: 0;
+}
+
+.trajet-action {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.price {
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 2px solid black;
+    padding: 5px 10px;
+}
+
+/* --- PAGE PAIEMENT --- */
+.trajet-details {
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+
+.payment-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.payment-details label {
+    flex-grow: 1;
+    width: auto;
+}
+
+.cvv-input {
+    width: 100px !important;
+}
+
+.pay-btn {
+    width: 150px;
+    display: block;
+    margin: 40px auto 0 auto;
+}
+
+
+/* --- PAGE CONFIRMATION --- */
+.success-icon {
+    font-size: 4em;
+    color: #27c93f;
+    margin-bottom: 20px;
+}
+
+.confirmation-message {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid black;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+.status-message {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid black;
+    font-weight: bold;
+    margin-bottom: 30px;
+    background-color: #ccc;
+}
+
+.download-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.download-icon {
+    font-size: 2em;
+}
+
+.download-text {
+    display: inline-block;
+    padding: 5px 15px;
+    border: 2px solid black;
+}
+
+.car-icon {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
