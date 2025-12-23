@@ -383,3 +383,10 @@ form input:focus {
   background-color: #fff;
   box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
 }
+/* ===== COMMIT 1: Couleurs par page ===== */
+#connexion { background-color: #eef3ff; }
+#inscription { background-color: #f0fff4; }
+#recherche { background-color: #fff7e6; }
+#resultats { background-color: #f5f5f5; }
+#paiement { background-color: #fff0f0; }
+#confirmation { background-color: #f0f8ff; }
