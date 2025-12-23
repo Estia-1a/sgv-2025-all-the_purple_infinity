@@ -390,3 +390,24 @@ form input:focus {
 #resultats { background-color: #f5f5f5; }
 #paiement { background-color: #fff0f0; }
 #confirmation { background-color: #f0f8ff; }
+/* Header navigateur */
+.browser-header { background-color: #dde6ff; }
+.address-bar { background-color: #ffffff; }
+
+/* Boutons */
+.btn.primary { background-color: #cdd6ff; }
+.btn.secondary { background-color: #eeeeee; }
+.btn.link { color: #1f2a7a; }
+
+/* Prix */
+.price { background-color: #ffffff; color: #1f2a7a; }
+
+/* Titres */
+.section-title { background-color: #ffffff; }
+
+/* Liens */
+.signup-link a { color: #1f2a7a; }
+
+/* Confirmation */
+.success-icon { color: #1f8f4a; }
+.status-message { background-color: #cdeedd; }
