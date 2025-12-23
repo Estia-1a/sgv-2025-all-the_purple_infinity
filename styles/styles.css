@@ -70,14 +70,20 @@ body {
 
 
 .page {
-    display: none; /* Cache toutes les pages par défaut */
-    text-align: center;
-    padding: 20px;
+  display: none;
+  text-align: center;
+  padding: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .page.active {
-    display: block; /* Affiche uniquement la page active */
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
+
 
 /* --- Éléments de la Maquette --- */
 
@@ -411,3 +417,14 @@ form input:focus {
 /* Confirmation */
 .success-icon { color: #1f8f4a; }
 .status-message { background-color: #cdeedd; }
+/* ===== Transition douce entre les pages ===== */
+.page {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page.active {
+  opacity: 1;
+  transform: translateY(0);
+}
