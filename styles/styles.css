@@ -66,15 +66,13 @@ body {
 }
 
 /* Contenu des Pages */
-.content {
-    padding: 40px;
-    min-height: 600px; /* Hauteur minimale pour l'aspect visuel */
-    position: relative;
-}
+.content { padding: 40px; min-height: 520px; position: relative; }
+
 
 .page {
     display: none; /* Cache toutes les pages par défaut */
     text-align: center;
+    padding: 20px;
 }
 
 .page.active {
@@ -224,8 +222,9 @@ form input[type="time"],
 }
 
 .date-input-wrapper input {
-    width: 150px; /* Largeur spécifique pour les champs date/mois/année */
-    display: inline-block;
+  width: 150px;
+  padding-right: 30px; /* place pour l'icône */
+  display: inline-block;
 }
 
 .date-input-wrapper.small input {
@@ -357,4 +356,30 @@ form input[type="time"],
 .car-icon {
     font-size: 3em;
     margin-bottom: 30px;
+}
+@media (max-width: 768px) {
+  body { padding: 10px; }
+  .browser-mockup { width: 100%; }
+  .content { padding: 20px; min-height: auto; }
+
+  .form-container, .search-form-container { width: 100%; }
+  .logo-placeholder { position: static; margin: 0 auto 15px auto; }
+
+  .trajet-card { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .trajet-action { width: 100%; justify-content: space-between; }
+}
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0px 0px rgba(0,0,0,0.75);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 1px 1px 0px 0px rgba(0,0,0,0.75);
+}
+
+form input:focus {
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.15);
 }
